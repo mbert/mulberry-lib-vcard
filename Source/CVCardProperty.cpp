@@ -35,6 +35,7 @@
 #include "CStringUtils.h"
 
 #include <iostream>
+#include <memory>
 #include <strstream>
 
 using namespace vCard;

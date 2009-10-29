@@ -24,6 +24,8 @@
 #ifndef CVCardAddressBookRef_H
 #define CVCardAddressBookRef_H
 
+#include <cstdint>
+
 namespace vCard {
 
 typedef uint32_t	CVCardAddressBookRef;	// Unique reference to object

@@ -34,6 +34,7 @@
 
 #include <algorithm>
 #include <cstring>
+#include <memory>
 
 using namespace vCard;
 

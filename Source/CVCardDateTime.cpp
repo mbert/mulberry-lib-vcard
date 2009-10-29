@@ -28,6 +28,7 @@
 
 #include <ctime>
 #include <iomanip>
+#include <cstdlib>
 #include <cstring>
 
 using namespace vCard;

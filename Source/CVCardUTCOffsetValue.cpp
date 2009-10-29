@@ -23,6 +23,7 @@
 
 #include "CVCardUTCOffsetValue.h"
 
+#include <cstdlib>
 #include <iomanip>
 
 using namespace vCard;
