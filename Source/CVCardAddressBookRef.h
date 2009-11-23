@@ -24,7 +24,7 @@
 #ifndef CVCardAddressBookRef_H
 #define CVCardAddressBookRef_H
 
-#include <cstdint>
+#include <stdint.h>
 
 namespace vCard {
 
