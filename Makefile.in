@@ -1,0 +1,90 @@
+#
+# Makefile for Mulberry's vCard Lib
+#
+# Compatibility: GNU
+#
+# $Date$
+# $Revision$
+#
+
+#
+# Default installation root...
+#
+prefix = @prefix@
+
+DESTDIR = @DESTDIR@
+
+#
+# tools used for compiling / installing...
+#
+CXX = @CXX@
+AR = @AR@
+INSTALL = @INSTALL@
+DOXYGEN = @DOXYGEN@
+HAS_MM = @HAS_MM@
+PRELINK = @PRELINK@
+O = .o
+E =
+A = .a
+D = .so
+
+#
+# Name of target object files:
+#
+LIBRARY = libvCard
+LIBDIR = $(DESTDIR)$(prefix)/lib
+INCDIR = $(DESTDIR)$(prefix)/include
+OBJS = \
+	Source/CVCardAddressBook$O \
+	Source/CVCardAddress$O \
+	Source/CVCardAddressValue$O \
+	Source/CVCardAttribute$O \
+	Source/CVCardComponentBase$O \
+	Source/CVCardComponent$O \
+	Source/CVCardComponentDB$O \
+	Source/CVCardComponentRecord$O \
+	Source/CVCardDateTime$O \
+	Source/CVCardDateTimeValue$O \
+	Source/CVCardDefinitions$O \
+	Source/CVCardDummyValue$O \
+	Source/CVCardLocale$O \
+	Source/CVCardMultiValue$O \
+	Source/CVCardN$O \
+	Source/CVCardNValue$O \
+	Source/CVCardPlainTextValue$O \
+	Source/CVCardProperty$O \
+	Source/CVCardSync$O \
+	Source/CVCardTextValue$O \
+	Source/CVCardURIValue$O \
+	Source/CVCardUTCOffsetValue$O \
+	Source/CVCardUtils$O \
+	Source/CVCardValue$O \
+	Source/CVCardVCard$O
+
+.PHONY : all clean distclean debug
+
+#
+# Main target and file dependencies:
+#
+
+all: $(LIBRARY)$A
+
+#
+# Flags passed to the compiler
+#
+
+JX_ROOT = ../JX
+JX_MAKE_INCLUDE_DIR = $(JX_ROOT)/include/make
+include $(JX_MAKE_INCLUDE_DIR)/jx_constants
+include $(JX_MAKE_INCLUDE_DIR)/jx_config
+CXXDEBUG = -g
+CXXOPT = @CXXOPT@
+CXXWARN = @CXXWARN@
+CPPFLAGS = @CPPFLAGS@ $(J_RAW_SYSTEM_STUFF) -include ../../Linux/Sources/Mulberry_Prefix.h -I../../Sources_Common/i18n/Charsets -I../../Linux/Includes -I../../Sources_Common -I../../Linux/Resources -I../../Sources_Common/Utilities/ -I$(JX_ROOT)/include/jcore -I$(JX_ROOT)/include/jx -I$(JX_ROOT)/include/jximage -I$(JX_ROOT)/ACE/ACE_wrappers
+CXXFLAGS = @CXXFLAGS@ $(CPPFLAGS) $(CXXOPT) $(CXXDEBUG) $(CXXWARN)
+
+include ../include/libraryrules.mak
+
+ifeq (yes,${HAS_MM})
+-include $(DEPENDS)
+endif
