@@ -74,23 +74,28 @@ void CVCardUtils::WriteTextValue(std::ostream& os, const cdstring& value)
 			os.write(value.c_str() + start_pos, end_pos - start_pos);
 
 			// Write escape
-			os << '\\';
 			switch(value[end_pos])
 			{
 			case '\r':
-				os << 'r';
+				if (size_pos > end_pos + 1)
+				{
+					if (value[end_pos + 1] != '\n')
+						os << "\\n";
+				}
+				else
+					os << "\\n";
 				break;
 			case '\n':
-				os << 'n';
+				os << "\\n";
 				break;
 			case ';':
-				os << ';';
+				os << "\\;";
 				break;
 			case '\\':
-				os << '\\';
+				os << "\\\\";
 				break;
 			case ',':
-				os << ',';
+				os << "\\,";
 				break;
 			}
 
