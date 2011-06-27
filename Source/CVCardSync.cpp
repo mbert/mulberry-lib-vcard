@@ -27,6 +27,7 @@
 #include "CVCardVCard.h"
 
 #include <algorithm>
+#include <iterator>
 
 using namespace vCard;
 
