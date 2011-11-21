@@ -75,6 +75,8 @@ const char* cVCardProperty_AGENT = "AGENT";
 
 const char* cVCardProperty_CALENDAR_ADDRESS = "X-CALENDAR-ADDRESS";
 
+const char* cVCardProperty_CALADRURI = "CALADRURI";
+
 const char* cVCardProperty_ORG = "ORG";
 
 const char* cVCardProperty_CATEGORIES = "CATEGORIES";
@@ -140,12 +142,12 @@ const char* cVCardAttribute_TYPE = "TYPE";
 	const char* cVCardAttribute_TYPE_KEY_X509 = "X509";
 	const char* cVCardAttribute_TYPE_KEY_PGP = "PGP";
 
-	const char* cVCardAttribute_TYPE_ADR_DOM = "dom";
-	const char* cVCardAttribute_TYPE_ADR_INTL = "intl";
-	const char* cVCardAttribute_TYPE_ADR_POSTAL = "postal";
-	const char* cVCardAttribute_TYPE_ADR_PARCEL = "parcel";
-	const char* cVCardAttribute_TYPE_ADR_HOME = "home";
-	const char* cVCardAttribute_TYPE_ADR_WORK = "work";
+	const char* cVCardAttribute_TYPE_ADR_DOM = "DOM";
+	const char* cVCardAttribute_TYPE_ADR_INTL = "INTL";
+	const char* cVCardAttribute_TYPE_ADR_POSTAL = "POSTAL";
+	const char* cVCardAttribute_TYPE_ADR_PARCEL = "PARCEL";
+	const char* cVCardAttribute_TYPE_ADR_HOME = "HOME";
+	const char* cVCardAttribute_TYPE_ADR_WORK = "WORK";
 
 // draft-jennings-impp-vcard-05 Parameters
 	const char* cVCardAttribute_TYPE_IMPP_PERSONAL = "PERSONAL";
@@ -157,18 +159,18 @@ const char* cVCardAttribute_TYPE = "TYPE";
 // Value types
 
 // 2425 MIME-DIR
-const char* cVCardValue_URI = "uri";
-const char* cVCardValue_TEXT = "ptext";
-const char* cVCardValue_DATE = "date";
-const char* cVCardValue_TIME = "time";
-const char* cVCardValue_DATE_TIME = "date-time";
-const char* cVCardValue_INTEGER = "integer";
-const char* cVCardValue_BOOLEAN = "boolean";
-const char* cVCardValue_FLOAT = "float";
+const char* cVCardValue_URI = "URI";
+const char* cVCardValue_TEXT = "TEXT";
+const char* cVCardValue_DATE = "DATE";
+const char* cVCardValue_TIME = "TIME";
+const char* cVCardValue_DATE_TIME = "DATE-TIME";
+const char* cVCardValue_INTEGER = "INTEGER";
+const char* cVCardValue_BOOLEAN = "BOOLEAN";
+const char* cVCardValue_FLOAT = "FLOAT";
 
 // 2426 vCard
-const char* cVCardValue_BINARY = "binary";
-const char* cVCardValue_UTC_OFFSET = "utc-offset";
+const char* cVCardValue_BINARY = "BINARY";
+const char* cVCardValue_UTC_OFFSET = "UTC-OFFSET";
 
 // Parameter Values
 
