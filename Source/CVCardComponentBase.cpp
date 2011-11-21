@@ -84,10 +84,43 @@ bool CVCardComponentBase::LoadValue(const char* value_name, CVCardDateTime& valu
 	return false;
 }
 
+void CVCardComponentBase::SortedPropertyKeys(cdstrvect& results) const
+{
+    cdstrset keys;
+	for(CVCardPropertyMap::const_iterator iter = mProperties.begin(); iter != mProperties.end(); iter++)
+		keys.insert((*iter).first);
+    
+    const cdstrvect& sorted = SortedPropertyKeyOrder();
+    for(cdstrvect::const_iterator iter = sorted.begin(); iter != sorted.end(); iter++)
+    {
+        if (keys.count(*iter))
+        {
+            results.push_back(*iter);
+            keys.erase(*iter);
+        }
+    }
+    
+    for(cdstrset::const_iterator iter = keys.begin(); iter != keys.end(); iter++)
+        results.push_back(*iter);
+}
+
+static cdstrvect emptysort;
+
+const cdstrvect& CVCardComponentBase::SortedPropertyKeyOrder() const
+{
+    return emptysort;
+}
+
 void CVCardComponentBase::WriteProperties(std::ostream& os) const
 {
-	for(CVCardPropertyMap::const_iterator iter = mProperties.begin(); iter != mProperties.end(); iter++)
-		(*iter).second.Generate(os);
+    cdstrvect sortedkeys;
+    SortedPropertyKeys(sortedkeys);
+
+    for(cdstrvect::const_iterator iter1 = sortedkeys.begin(); iter1 != sortedkeys.end(); iter1++)
+    {
+        for(CVCardPropertyMap::const_iterator iter2 = mProperties.lower_bound(*iter1); iter2 != mProperties.upper_bound(*iter1); iter2++)
+            (*iter2).second.Generate(os);
+    }
 }
 
 bool CVCardComponentBase::LoadPrivateValue(const char* value_name, cdstring& value)

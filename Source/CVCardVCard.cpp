@@ -69,3 +69,15 @@ void CVCardVCard::Finalise()
 	}
 }
 
+static cdstrvect sortitems;
+
+const cdstrvect& CVCardVCard::SortedPropertyKeyOrder() const
+{
+    if (sortitems.empty())
+    {
+        sortitems.push_back(cVCardProperty_VERSION);
+        sortitems.push_back(cVCardProperty_PRODID);
+        sortitems.push_back(cVCardProperty_UID);
+    }
+    return sortitems;
+}
