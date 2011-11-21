@@ -90,6 +90,9 @@ protected:
 	bool	LoadPrivateValue(const char* value_name, cdstring& value);
 	void	WritePrivateProperty(std::ostream& os, const cdstring& key, const cdstring& value) const;
 
+    void SortedPropertyKeys(cdstrvect& results) const;
+    virtual const cdstrvect& SortedPropertyKeyOrder() const;
+    
 private:
 	void	_copy_CVCardComponentBase(const CVCardComponentBase& copy)
 		{ mProperties = copy.mProperties; }

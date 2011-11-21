@@ -68,6 +68,7 @@ public:
 	// Editing
 
 	// Generating info
+    virtual const cdstrvect& SortedPropertyKeyOrder() const;
 
 private:
 	static cdstring		sBeginDelimiter;
