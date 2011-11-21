@@ -75,6 +75,8 @@ extern const char* cVCardProperty_AGENT;
 
 extern const char* cVCardProperty_CALENDAR_ADDRESS;
 
+extern const char* cVCardProperty_CALADRURI;
+
 extern const char* cVCardProperty_ORG;
 
 extern const char* cVCardProperty_CATEGORIES;

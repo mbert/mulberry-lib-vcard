@@ -135,9 +135,10 @@ void CVCardProperty::_init_map()
 		sDefaultValueTypeMap.insert(CValueTypeMap::value_type(cVCardProperty_VERSION, CVCardValue::eValueType_Text));
 		sDefaultValueTypeMap.insert(CValueTypeMap::value_type(cVCardProperty_CLASS, CVCardValue::eValueType_Text));
 		sDefaultValueTypeMap.insert(CValueTypeMap::value_type(cVCardProperty_KEY, CVCardValue::eValueType_Text));
-		sDefaultValueTypeMap.insert(CValueTypeMap::value_type(cVCardProperty_IMPP, CVCardValue::eValueType_URI));
 		
 		// Extensions
+		sDefaultValueTypeMap.insert(CValueTypeMap::value_type(cVCardProperty_IMPP, CVCardValue::eValueType_URI));
+		sDefaultValueTypeMap.insert(CValueTypeMap::value_type(cVCardProperty_CALADRURI, CVCardValue::eValueType_URI));
 		sDefaultValueTypeMap.insert(CValueTypeMap::value_type(cVCardProperty_CALENDAR_ADDRESS, CVCardValue::eValueType_URI));
 	}
 
