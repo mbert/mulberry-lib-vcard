@@ -73,7 +73,7 @@ void CVCardN::SetFullName(const cdstring& data)
 		start = end + 1;
 		
 		// Look for last name portion
-		end = data.find_last_of(' ', start);
+		end = data.find_last_of(' ', cdstring::npos);
 		if (end > start)
 		{
 			mItems[eMiddle].assign(data, start, end - start);
